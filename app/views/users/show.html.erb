@@ -1,0 +1,8 @@
+<h1>Users#show</h1>
+
+<%= @user.fname %>
+<% if current_user and current_user == @user %>
+<p><%= link_to 'delete user', user_path(@user.id), method: :delete %></p>
+<p><%= link_to 'Edit', edit_user_path(@user.id) %></p>
+<% end %>
+

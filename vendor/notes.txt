@@ -1,0 +1,3 @@
+notes.txt
+
+User.first.posts.create(title: "Hello world", body: "First post!") will create a post in the console. Put this in a submit  form.

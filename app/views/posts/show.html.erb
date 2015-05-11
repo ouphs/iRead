@@ -1,0 +1,30 @@
+<h1>Posts#show</h1>
+
+<% if @post.errors.any? %>
+	<% @post.errors.full_message.each do |error| %>
+	<p style="color: red bold;"><% error %></p>
+	<% end%>
+<% end %>
+
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+<p>Click <%= link_to 'here', edit_post_path %> to edit your post</p>
+<p> Click <%= link_to 'here', post_path(@post.id), method: :delete %> to delete your post</p>
+<hr>
+<% @post.comments.each do |comment| %>
+	<p><%= comment.body %> (<%= comment.user.fname %>)</p>
+<%end %>
+<hr>
+
+
+
+
+<% if current_user %> 
+	<h5>Post a post below</h5>
+	<%= form_for [@post, @comment] do |f| %>
+		<%= f.text_area :body %><br>
+		<%= f.submit %>
+	<% end %>
+<% else %>
+	<h5><%= link_to 'Login', login_path %> to comment!</h5>
+<% end%>
