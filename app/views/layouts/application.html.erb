@@ -12,7 +12,7 @@
 		<% if current_user %>
 
 		<li id="name"><%= "Hi #{current_user.fname}! " %></li>
-		<li><a><%=link_to('Edit Profile', edit_user_path(current_user.id), method: :get) %></a></li>
+		<li><a><%=link_to('Edit Profile', edit_user_path(current_user.id), method: :get) %></a></li></br>
 		<li><a><%= link_to( 'Sign out', logout_path, method: :delete) %></a></li>
 
                         

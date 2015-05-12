@@ -6,6 +6,7 @@
 	<% end%>
 <% end %>
 
+<div id="postshow">
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
 <p>Click <%= link_to 'here', edit_post_path %> to edit your post</p>
@@ -14,13 +15,14 @@
 <% @post.comments.each do |comment| %>
 	<p><%= comment.body %> (<%= comment.user.fname %>)</p>
 <%end %>
+</body>
 <hr>
 
 
 
 
 <% if current_user %> 
-	<h5>Post a post below</h5>
+	<h5>Post a comment below</h5>
 	<%= form_for [@post, @comment] do |f| %>
 		<%= f.text_area :body %><br>
 		<%= f.submit %>

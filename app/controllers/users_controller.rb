@@ -53,7 +53,7 @@ private
   end
 
   def user_params
-  	params.require(:user).permit(:fname, :lname, :email, :password) #this is a vey specific syntax, MEMORIZE it a.s.a.p.
+  	params.require(:user).permit(:fname, :lname, :email, :email_confirmation :password) #this is a vey specific syntax, MEMORIZE it a.s.a.p.
   end
 
 end
