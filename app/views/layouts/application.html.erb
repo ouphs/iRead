@@ -12,10 +12,10 @@
 		<% if current_user %>
 
 		<li id="name"><%= "Hi #{current_user.fname}! " %></li>
-		<li><a><%=link_to('Edit Profile', edit_user_path(current_user.id), method: :get) %></a></li></br>
-		<li><a><%= link_to( 'Sign out', logout_path, method: :delete) %></a></li>
-
-                        
+		<li><%=link_to('Edit Profile', edit_user_path(current_user.id), method: :get) %></li></br>
+		<li><%= link_to( 'Sign out', logout_path, method: :delete) %></li></br>
+		<li><%= link_to 'Create new Post', new_post_path %></li></br>
+        <li><%= link_to 'View all posts', posts_path %></li>                
 		<% else %>    
 	       
 		<%= form_tag('/login', method: :post) do |f| %>

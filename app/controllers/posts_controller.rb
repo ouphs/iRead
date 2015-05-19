@@ -29,12 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      flash[:notice] = "Post was update"
-      redirect_to posts_path
-    else 
-      render :edit
-    end
+  
   end
 
   def destroy

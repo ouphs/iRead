@@ -5,14 +5,16 @@
 	<p>All Posts</p>
 	<% @posts.each do |p| %>
 	<ul>
-		<li><%=	link_to p.body, post_path(p.id) %></li>
-	<%= p.user.fname%></br>
+		<li><%=	link_to p.body, post_path(p.id) %> | <%= p.user.fname %></li> 
 	</ul>
 	<% end %>
+<button><%= link_to 'Create new Post', new_post_path %></button>
+
 </div>
 
 
  
-	<p><%= link_to 'Create new Post', new_post_path %></p>
+	
 </main>
+
     

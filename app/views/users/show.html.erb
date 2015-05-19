@@ -4,5 +4,18 @@
 <% if current_user and current_user == @user %>
 <p><%= link_to 'delete user', user_path(@user.id), method: :delete %></p>
 <p><%= link_to 'Edit', edit_user_path(@user.id) %></p>
+<%=link_to "Delete", user_path(user_id: @user.id), method: :delete, remote: true, class: "delete-user" %>
 <% end %>
+
+<% if current_user != @user %>
+	<%if current_user and current_user.following.include?(@user) %>
+<p><%= link_to 'unfollow', unfollow_user_path(@user), remote: true %></p>
+	<% else %>
+	<p><%= link_to 'follow', follow_user_path(@user), remote: true %></p>
+<% end %>
+<% end %>
+
+
+<p>Following<%= @user.following.length %> user's</p>
+<p>Followed by <%= @user.followers.length %> user's</p>
 

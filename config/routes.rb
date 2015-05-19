@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :comments, shallow: true, only: [:create, :destroy] 
   end
 
+  get '/follow/:id', to: 'users#follow', as: 'follow_user'
+  get '/unfollow/:id', to: 'users#unfollow', as: 'unfollow_user'
   #post '/posts/:id', to: 'posts#show'
   # commented out because of resources :posts
   # get 'posts/index'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#delete'
   
   resources :users
+
   # commented out because resourses :users
   # get 'users/index'
   # get 'users/new'
