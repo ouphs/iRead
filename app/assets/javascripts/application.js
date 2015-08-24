@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready() $(".delete-user").on("ajax:complete", function(e){   $(e.currentTarget).parent().hide() });
+// $(document).ready()
+//   	$(".delete-user").on("ajax:complete", function(e){   $(e.currentTarget).parent().hide() 
+//  });
